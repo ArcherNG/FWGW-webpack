@@ -1,0 +1,397 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    list-style-type: none;
+    font-family: 'Lucida Family','Helvetica','Impact','Microsoft YaHei';
+}
+#fullpage{
+    text-align: center;
+    font-size: 18px;
+}
+/* nav begin */
+.nav{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 72px;
+    background-color:rgba(4,8,40,0.3);
+    z-index: 999;
+}
+.nav .logo{
+    width: 15%;
+    height: 100%;
+    margin-left: 15%;
+    float: left;
+    background-image: url(../images/logo_03.png);
+    background-size: 100% 100%;
+}
+.nav-ul{
+    margin-left: 65%;
+    height: 100%;
+    color: rgba(173,173,173,1);
+}
+.nav-ul a{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: rgba(255,255,255,1);
+    font-family: 'Helvetica','Impact','Microsoft YaHei';
+}
+.nav-ul-index,.nav-ul-bussess{
+    margin: 0 3%;
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 72px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.nav-ul b{
+    position: absolute;
+    top: 50px;
+    background-color:rgba(255,168,0,1);
+    display: block;
+    width: 0;
+    height:2px;
+    transition: all 0.5s ease 0s;
+}
+.nav-ul a:hover{
+    color:rgba(255,168,0,1);
+}
+.nav-ul a:hover>b{
+    width: 100%;
+}
+/* nav end */
+/* content begin */
+.content a{
+    display: block;
+    margin: 0 auto 2% auto;
+    padding-top: 3%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+}
+/* 设置相对定位、overflow  让元素的动画效果相对div tranlatex运动 而不是相对于body*/
+.content-FCTW,.content-GB,.content-CACG{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(118,208,240,1);
+}
+.content-FCTW a{
+    color: rgba(255,255,255,1);
+}
+.content-FCTW .span{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: url(../images/spanbgi.png) center center no-repeat;
+}
+.content-FCTW span{
+    display: block;
+    font-size: 20px;
+    margin:0 0 3% 0;
+}
+.content-FCTW p{
+    color: rgba(255,255,255,1);
+}
+.content-FCTW .FZ{
+    position: relative;
+    margin: 5% auto;
+    width: 50%;
+    height: 50%;
+    background-image: url(../images/fangzi_03.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+/* animation  start*/
+@keyframes floating{
+    0%{transform:translate3d(0,0,0);opacity:0;}
+    50%{transform:translate3d(0,65px,0);opacity:1;}
+    100%{transform:translate3d(0,0,0);opacity:1;}
+}
+.floating{
+    animation: floating 3s ease-in-out forwards;
+}
+@keyframes lefteaseinAnimate{
+    0%{ transform: translateX(-2000px); visibility: hidden;}
+    100%{ transform: translateX(0px);}
+}
+.title_name{
+    animation: lefteaseinAnimate 1s ease 1;
+    animation-fill-mode:forwards;
+}
+@keyframes righteaseinAnimate{
+    0%{ transform: translateX(2000px); visibility: hidden;}
+    100%{ transform: translateX(0px); opacity: 1;}   
+}
+.slogan_introduce{
+    animation: righteaseinAnimate 2s ease-out 1;
+    animation-fill-mode:forwards;
+}
+@keyframes suofang{
+    0%{ transform: scale(0,0); opacity: 0;}
+    50%{ transform: scale(2,2); opacity: 0.5;}
+    100%{ transform: scale(1,1); opacity:1;} 
+}
+.suofang{
+    animation: suofang 3s ease 1;
+    animation-fill-mode:forwards;
+}
+@keyframes myfirst {
+    0% {transform:rotatez(0deg);} 100% {transform:rotatez(360deg);}
+}
+.DiQiuZiZhuan{
+    animation: myfirst 3s ease 1;
+}
+@keyframes myfirst {
+    0% {transform:rotatez(0deg);} 100% {transform:rotatez(360deg);}
+}
+/* animation  end*/
+.content-GB{
+    background-color: rgba(255,255,255,1);
+    color: rgba(113,113,133,1);
+}
+.content-GB a{
+    color: rgba(113,113,133,1);
+}
+.content-GB .span{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: url(../images/spanbgi1.png) center center no-repeat;
+}
+.content-GB span{
+    display: block;
+    font-size: 24px;
+    margin:0 0 3% 0;
+}
+.content-GB .slogan1{
+    position: absolute;
+    top:35%;
+    left: 15%;
+}
+.content-GB .slogan2{
+    position: absolute;
+    top: 35%;
+    left:65%;
+} 
+.content-GB .slogan3{
+    position: absolute;
+    top:65%;
+    left: 65%;
+}  
+.content-GB .DQ{
+    position: relative;
+    margin: 5% auto;
+    width: 25%;
+    height: 50%;
+    background-image: url(../images/diqiu_07.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.content-CACG{
+    background-color: rgba(240,248,251,1);
+    color:rgba(104,104,104,1);
+}
+.content-CACG .span{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: url(../images/spanbgi1.png) center center no-repeat;
+}
+.content-CACG .YXJT{
+    position: relative;
+    margin: 5% auto;
+    width: 30%;
+    height: 50%;
+    background-image: url(../images/qipai_07.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.footer{
+    width: 100%;
+    height: 25%;
+    background-color: rgba(51,57,70,1);
+    text-align: center;
+    color: rgba(135, 135, 135, 1);
+    line-height: 24px;
+}
+/* content end */
+/* footer start */
+.footer .heath{
+    margin: 0 auto;
+    width: 8%;
+    height: 15%;
+    background-image: url(../images/heath.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+/* footer end */
+/* business cooperation start */
+.fullpage-BC{
+    background-color:rgba(240,248,251,1);
+}
+.content-BC{
+    position: relative;
+    overflow: hidden;
+}
+.content-BC a{
+    color:rgba(113,113,113,1);
+}
+.content-BC .span{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: url(../images/spanbgi1.png) center center no-repeat;
+}
+.content-BC span{
+    display: block;
+    font-size: 24px;
+}
+.content-cooperationways{
+    width: 75%;
+    height: 150px;
+    margin: 5% auto;
+}
+.content-cooperationways div{
+    display: block;
+    float: left;
+    margin:0 3%;
+}
+.content-cooperationways div p,.content-cooperationinfo P{
+    font-size: 14px;
+    color:rgba(113,113,113,1)
+}
+.content-cooperationinfo{
+    padding:25px 0 0 55px;
+    text-align: left;
+    line-height: 24px;
+    width: 25%;
+    height: 150px;
+    margin: 5% auto;
+    background-color:rgba(255,255,255,1);
+}
+.content-cooperationinfo i{
+    vertical-align: top;
+}
+/* business cooperation end */
+/* responsive start*/
+/* phone */
+@media screen and (max-width:425px){
+    #fullpage{
+        text-align: center;
+        font-size: 14px;
+    }
+    .nav{
+        height: 36px;
+        background-color:rgba(4,8,40,0.8);
+    }
+    .fp-auto-height{
+        padding-top: 36px;
+    }
+    .nav-ul b{
+        top:28px;
+    }
+    .nav .logo{
+        width:20%;
+    }
+    .nav-ul-index,.nav-ul-bussess{
+        line-height: 36px;
+    }
+    .content-FCTW .FZ{
+        margin: 15% auto;
+        width:85%;
+        height: 45%;
+    }
+    .content a{
+        padding-top: 10%;
+    }
+    .content-GB .slogan1{
+        position: absolute;
+        width: 100px;
+        top:30%;
+        left:5%;
+    }
+    .content-GB .slogan2{
+        position: absolute;
+        width: 100px;
+        top:30%;
+        left:70%;
+    }
+    .content-GB .slogan3{
+        position: absolute;
+        width: 130px;
+        top:68%;
+        left:65%;
+    }
+    .content-GB .DQ{
+        width: 50%;
+        margin: 25% auto;
+        height: 30%;
+    }
+    .content-cooperationways{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .content-cooperationways div{
+        margin:0;
+        width:50%;
+    }
+    .content-cooperationways .item3{
+        margin-top:20%;
+    }
+    .content-cooperationways .item4{
+        margin-top: -24%;
+    }
+    .content-cooperationinfo{
+        width:70%;
+        margin: 40% auto 0 auto;
+        padding: 10px 0 0 25px;
+    }
+    .content-CACG .YXJT{
+        margin: 15% auto;
+        width: 85%;
+    }
+}
+/* ipad and ipad pro */
+@media screen and (min-width: 768px)and (max-width:1024px){
+    .content-GB .slogan1{
+        position: absolute;
+        top:30%;
+        left:2%;
+    }
+    .content-GB .slogan2{
+        position: absolute;
+        top: 30%;
+        left:65%;
+    } 
+    .content-GB .DQ{
+        width: 50%;
+        margin: 30% auto;
+        height: 30%;
+    }
+    .content-CACG .YXJT{
+        margin: 15% auto;
+        width: 85%;
+    }
+}
+
