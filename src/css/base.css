@@ -32,6 +32,7 @@ time, mark, audio, video {
     height: 72px;
     background-color:rgba(4,8,40,0.3);
     z-index: 999;
+    box-shadow: 0 0.05rem 0.15rem rgba(4, 31, 102, .5);
 }
 .nav .logo{
     width: 15%;

@@ -10,7 +10,10 @@ module.exports = merge(common,{
     devServer:{
         contentBase: './dist',
         port:9000,
-        host:'127.0.0.1',
+        // 本地调试
+        // host:'127.0.0.1',
+        // 外部访问测试
+        host:'0.0.0.0',
         hot:true
     },
     plugins:[
