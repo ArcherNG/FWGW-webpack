@@ -8,6 +8,9 @@ module.exports = {
     // 漏写会报编译时错误  新添加的属性
     mode: 'production',
     // 屏蔽一些因为加载文件过大的一些编译时错误
+    // 性能配置
+    // 这些选项可以控制 webpack 如何通知「资源(asset)和入口起点超过指定文件限制」。 
+    // 此功能受到 webpack 性能评估的启发。
     performance: {
       hints: false
     },
@@ -98,7 +101,4 @@ module.exports = {
             },
         ]
     },
-    // 性能配置
-    // 这些选项可以控制 webpack 如何通知「资源(asset)和入口起点超过指定文件限制」。 
-    // 此功能受到 webpack 性能评估的启发。
 }

@@ -4,7 +4,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-
+// 开启热更新   启用 source map
 module.exports = merge(common,{
     devtool: 'inline-source-map',
     devServer:{

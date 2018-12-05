@@ -8,7 +8,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const common = require('./webpack.common.js');
 
 module.exports = merge(common,{
-      // 丑化css代码
+      // 丑化css代码 js代码
     optimization: {
         minimizer: [
           new UglifyJSPlugin({
