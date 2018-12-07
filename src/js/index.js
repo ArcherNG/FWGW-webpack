@@ -3,19 +3,20 @@ require('../images/Banner_1.png');
 require('../images/Banner_2.png');
 import '../css/fullpage.min.css';
 import '../css/base.css';
+import '../css/menu.css';
 import fullpage from './fullpage.min.js';
 $(document).ready(function() {
       // fullpage.js option start
-      var fullPageInstance = new fullpage('#fullpage',{
+    var fullPageInstance = new fullpage('#fullpage',{
         licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
         //options here
         autoScrolling:false,
         css3:true,
-        navigation: true,
+        // navigation: true,
         anchors:['01', '02', '03','04'],
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
-        navigationTooltips:['疯玩首页','公司理念','发展历程','游戏业务'],
+        // navigationTooltips:['疯玩首页','公司理念','发展历程','游戏业务'],
         onLeave: function(origin, destination, direction){
             var leavingSection = this;
             //after leaving section 2
@@ -43,12 +44,17 @@ $(document).ready(function() {
     setInterval(function(){
         fullPageInstance.moveSlideRight();
     }, 5000);
-    // $(window).scroll(function(){
-    //     if(this.scrollY==0){
-    //         $('.nav-fixed').css({
-    //             'position':'relative',
-    //             'background': "rgba(4, 8, 40, 1)"
-    //         })
-    //     }
-    // })
+    $(".menu-button[href='#'], .nav-cover, .nav-close").on("click", function(e){
+        e.preventDefault();
+        $("body").toggleClass("nav-opened nav-closed");
+         //给document绑定一个一次性的click事件，点击关闭菜单
+        $(document).one("click", function(){
+            $("body").toggleClass("nav-opened nav-closed");
+        });
+        // event.stopPropagation()来阻止事件冒泡  
+        e.stopPropagation(); 
+    });
+    $(".nav").on("click",function(e){
+        e.stopPropagation();
+    })
 });

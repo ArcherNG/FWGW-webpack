@@ -24,17 +24,17 @@ time, mark, audio, video {
     font-size: 18px;
 }
 /* nav begin */
-.nav{
+.nav-index{
     position: fixed;
     top:0;
     left:0;
     width: 100%;
     height: 72px;
     background-color:rgba(4,8,40,0.3);
-    z-index: 999;
+    z-index: 200;
     box-shadow: 0 0.05rem 0.15rem rgba(4, 31, 102, .5);
 }
-.nav .logo{
+.nav-index .logo{
     width: 15%;
     height: 100%;
     margin-left: 15%;
@@ -42,12 +42,12 @@ time, mark, audio, video {
     background-image: url(../images/logo_03.png);
     background-size: 100% 100%;
 }
-.nav-ul{
+.nav-index-ul{
     margin-left: 65%;
     height: 100%;
     color: rgba(173,173,173,1);
 }
-.nav-ul a{
+.nav-index-ul a{
     position: relative;
     display: block;
     width: 100%;
@@ -55,7 +55,7 @@ time, mark, audio, video {
     color: rgba(255,255,255,1);
     font-family: 'Helvetica','Impact','Microsoft YaHei';
 }
-.nav-ul-index,.nav-ul-bussess{
+.nav-index-ul-index,.nav-index-ul-bussess{
     margin: 0 3%;
     display: block;
     float: left;
@@ -64,7 +64,7 @@ time, mark, audio, video {
     overflow: hidden;
     cursor: pointer;
 }
-.nav-ul b{
+.nav-index-ul b{
     position: absolute;
     top: 50px;
     background-color:rgba(255,168,0,1);
@@ -73,10 +73,10 @@ time, mark, audio, video {
     height:2px;
     transition: all 0.5s ease 0s;
 }
-.nav-ul a:hover{
+.nav-index-ul a:hover{
     color:rgba(255,168,0,1);
 }
-.nav-ul a:hover>b{
+.nav-index-ul a:hover>b{
     width: 100%;
 }
 /* nav end */
@@ -302,20 +302,20 @@ time, mark, audio, video {
         text-align: center;
         font-size: 14px;
     }
-    .nav{
+    .nav-index{
         height: 36px;
         background-color:rgba(4,8,40,0.8);
     }
     .fp-auto-height{
         padding-top: 36px;
     }
-    .nav-ul b{
+    .nav-index-ul b{
         top:28px;
     }
-    .nav .logo{
+    .nav-index .logo{
         width:20%;
     }
-    .nav-ul-index,.nav-ul-bussess{
+    .nav-index-ul-index,.nav-index-ul-bussess{
         line-height: 36px;
     }
     .content-FCTW .FZ{
