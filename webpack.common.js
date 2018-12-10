@@ -29,7 +29,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            chunks:['index','common'],
+            chunks:['index','common','manifest'],
             minify: {
                 removeAttributeQuotes:true,
                 removeComments: true,
@@ -41,7 +41,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'bussess.html',
             template: './src/bussess.html',
-            chunks:['bussess','common'],
+            chunks:['bussess','common','manifest'],
             minify: {
                 removeAttributeQuotes:true,
                 removeComments: true,
@@ -104,12 +104,16 @@ module.exports = {
             },
         ]
     },
-    // 将SplitChunksPlugin允许我们共同的依赖提取到一个现有的条目块或一个全新的块。
     optimization: {
+        // 将SplitChunksPlugin允许我们共同的依赖提取到一个现有的条目块或一个全新的块。
         splitChunks: {
             name: 'common',
             chunks: 'all',
             filename: 'js/common.bundle.js'
-        }
+        },
+        // runtimeChunk可以配置成true，single或者对象，用自动计算当前构建的一些基础chunk信息，类似之前版本中的manifest信息获取方式。
+        runtimeChunk: {
+            name: 'manifest'
+        },
     }
 }

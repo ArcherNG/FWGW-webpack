@@ -240,8 +240,8 @@ time, mark, audio, video {
 /* footer start */
 .footer .heath{
     margin: 0 auto;
-    width: 40%;
-    height: 45px;
+    width: 150px;
+    height: 50px;
     background-image: url(../images/heath.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
