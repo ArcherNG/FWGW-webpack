@@ -42,7 +42,7 @@ time, mark, audio, video {
     background-image: url(../images/logo_03.png);
     background-size: 100% 100%;
 }
-.nav-index-ul{
+/* .nav-index-ul{
     margin-left: 65%;
     height: 100%;
     color: rgba(173,173,173,1);
@@ -78,7 +78,7 @@ time, mark, audio, video {
 }
 .nav-index-ul a:hover>b{
     width: 100%;
-}
+} */
 /* nav end */
 /* content begin */
 .content a{
@@ -240,8 +240,8 @@ time, mark, audio, video {
 /* footer start */
 .footer .heath{
     margin: 0 auto;
-    width: 8%;
-    height: 15%;
+    width: 40%;
+    height: 45px;
     background-image: url(../images/heath.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;

@@ -29,7 +29,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            chunks:['index'],
+            chunks:['index','common'],
             minify: {
                 removeAttributeQuotes:true,
                 removeComments: true,
@@ -41,7 +41,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'bussess.html',
             template: './src/bussess.html',
-            chunks:['bussess'],
+            chunks:['bussess','common'],
             minify: {
                 removeAttributeQuotes:true,
                 removeComments: true,
@@ -84,8 +84,11 @@ module.exports = {
             {
                 test:/\.(png|svg|jpg|gif)$/,
                 use: [{
-                    loader: 'file-loader',
+                    // 大于8192字节的图片正常打包，小于8192字节的图片以 base64 的方式引用。
+                    loader: 'url-loader',
                     options: {
+                        limit: "8192",
+                        name:"[name].[ext]",
                         outputPath: "images"
                     }
                 }]
@@ -101,4 +104,12 @@ module.exports = {
             },
         ]
     },
+    // 将SplitChunksPlugin允许我们共同的依赖提取到一个现有的条目块或一个全新的块。
+    optimization: {
+        splitChunks: {
+            name: 'common',
+            chunks: 'all',
+            filename: 'js/common.bundle.js'
+        }
+    }
 }

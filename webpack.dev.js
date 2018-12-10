@@ -13,7 +13,7 @@ module.exports = merge(common,{
         // 本地调试
         // host:'127.0.0.1',
         // 外部访问测试
-        host:'0.0.0.0',
+        host:'192.168.0.117',
         hot:true
     },
     plugins:[
