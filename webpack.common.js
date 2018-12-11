@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MinicssExtractPlugin = require('mini-css-extract-plugin');
 
-
 module.exports = {
     // 漏写会报编译时错误  新添加的属性
     mode: 'production',
@@ -83,15 +82,42 @@ module.exports = {
             //在这种情况下，图片文件，都将被提供给 file-loader。
             {
                 test:/\.(png|svg|jpg|gif)$/,
-                use: [{
-                    // 大于8192字节的图片正常打包，小于8192字节的图片以 base64 的方式引用。
-                    loader: 'url-loader',
-                    options: {
-                        limit: "8192",
-                        name:"[name].[ext]",
-                        outputPath: "images"
-                    }
-                }]
+                use: [
+                    {
+                    // 大于8192字节的图片正常打包，小于8192字节的图片以 base64 的方式引用。 
+                        loader: 'url-loader',
+                        options: {
+                            limit: "8192",
+                            name:"[name].[ext]",
+                            outputPath: "images"
+                        }
+                    },
+                    // image-webpack-loader 压缩图片
+                    // {
+                    //     loader: 'image-webpack-loader',
+                    //     options: {
+                    //       mozjpeg: {
+                    //         progressive: true,
+                    //         quality: 65
+                    //       },
+                    //       // optipng.enabled: false will disable optipng
+                    //       optipng: {
+                    //         enabled: false,
+                    //       },
+                    //       pngquant: {
+                    //         quality: '90-100',
+                    //         speed: 4
+                    //       },
+                    //       gifsicle: {
+                    //         interlaced: false,
+                    //       },
+                    //       // the webp option will enable WEBP
+                    //       webp: {
+                    //         quality: 75
+                    //       }
+                    //     }
+                    // },
+                ]
             },
              // html中引用的静态资源在这里处理,默认配置参数attrs=img:src,处理图片的src引用的资源.
              {
@@ -111,7 +137,7 @@ module.exports = {
             chunks: 'all',
             filename: 'js/common.bundle.js'
         },
-        // runtimeChunk可以配置成true，single或者对象，用自动计算当前构建的一些基础chunk信息，类似之前版本中的manifest信息获取方式。
+        // 优化持久化缓存
         runtimeChunk: {
             name: 'manifest'
         },

@@ -1,6 +1,7 @@
 var $ = require('./jquery-3.3.1.min.js');
 require('../images/Banner_1.png');
 require('../images/Banner_2.png');
+require('../images/Banner_3.png');
 import '../css/fullpage.min.css';
 import '../css/base.css';
 import '../css/menu.css';

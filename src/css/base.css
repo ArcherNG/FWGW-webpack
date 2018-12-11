@@ -373,6 +373,31 @@ time, mark, audio, video {
         width: 85%;
     }
 }
+
+/* ipad and ipad pro */
+@media screen and (min-width: 426px)and (max-width:768px){
+    .content-GB .slogan1{
+        position: absolute;
+        top:30%;
+        left:2%;
+    }
+    .content-GB .slogan2{
+        position: absolute;
+        top: 30%;
+        left:65%;
+    } 
+    .content-GB .DQ{
+        width: 45%;
+        margin: 30% auto;
+        height: 30%;
+    }
+    .content-CACG .YXJT{
+        margin: 15% auto;
+        width: 85%;
+    }
+}
+
+
 /* ipad and ipad pro */
 @media screen and (min-width: 768px)and (max-width:1024px){
     .content-GB .slogan1{
@@ -386,7 +411,7 @@ time, mark, audio, video {
         left:65%;
     } 
     .content-GB .DQ{
-        width: 50%;
+        width: 45%;
         margin: 30% auto;
         height: 30%;
     }
